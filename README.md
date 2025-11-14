@@ -73,7 +73,12 @@ HTTPS: https://localhost:7136/swagger
 
 ## Rodando via CMD / Terminal
 cd <caminho_para_o_projeto_IgrejaDashboardAPI>
+
 dotnet run
+
+O Swagger estará disponível em:
+
+HTTP: http://localhost:5136/swagger
 
 
 ## Endpoints
