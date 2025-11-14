@@ -1,6 +1,4 @@
-﻿using Azure;
-using Humanizer;
-using IgrejaDashboardAPI.Data;
+﻿using IgrejaDashboardAPI.Data;
 using IgrejaDashboardAPI.DTOs;
 using IgrejaDashboardAPI.Models;
 using Microsoft.EntityFrameworkCore;
@@ -74,8 +72,8 @@ namespace IgrejaDashboardAPI.Services
                 return null;
             }
 
-            pessoa.Nome = pessoaDto.Nome;
-            pessoa.Email = pessoaDto.Email;
+            pessoa.Nome = pessoaDto.Nome.ToUpper();
+            pessoa.Email = pessoaDto.Email.ToUpper();
             pessoa.Sexo = pessoaDto.Sexo;
             pessoa.Status = pessoaDto.Status;
 

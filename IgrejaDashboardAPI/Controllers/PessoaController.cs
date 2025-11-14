@@ -29,9 +29,6 @@ namespace IgrejaDashboardAPI.Controllers
         {
             var pessoas = await _pessoaService.ListarPessoas(search);
 
-            if (pessoas == null || pessoas.Count == 0)
-                return NotFound("Nenhuma pessoa encontrada.");
-
             return Ok(pessoas);
         }
 
@@ -52,7 +49,9 @@ namespace IgrejaDashboardAPI.Controllers
             var pessoa = await _pessoaService.EditarPessoa(codigo, pessoaDto);
 
             if (pessoa == null)
+            {
                 return NotFound("Pessoa não encontrada.");
+            }
 
             return pessoa;
 
@@ -66,7 +65,7 @@ namespace IgrejaDashboardAPI.Controllers
 
             var pessoa = await _pessoaService.CriarPessoa(pessoaDto);
 
-            return pessoa;
+            return CreatedAtAction(nameof(GetPessoas), new { codigo = pessoa.Codigo }, pessoa);
         }
 
         // DELETE: api/pessoas/5
@@ -75,12 +74,12 @@ namespace IgrejaDashboardAPI.Controllers
         {
             var pessoaRemovida = await _pessoaService.RemoverPessoa(codigo);
 
-            if(pessoaRemovida == null)
+            if(!pessoaRemovida)
             {
                 return NotFound("Pessoa não encontrada.");
             }
 
-            return Ok(new { mensagem = "Pessoa removida com sucesso." });
+            return Ok("Pessoa removida com sucesso.");
 
         }
 

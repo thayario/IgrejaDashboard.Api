@@ -1,6 +1,7 @@
 ﻿using IgrejaDashboardAPI.Models;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace IgrejaDashboardAPI.DTOs
 {
     public class PessoaDto

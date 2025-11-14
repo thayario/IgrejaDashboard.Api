@@ -8,6 +8,6 @@ public class Pessoa
     public int Codigo { get; set; }
     public string Nome { get; set; } = "";
     public string Email { get; set; } = "";
-    public Sexo Sexo { get; set; } = Sexo.Masculino;
-    public SituacaoPessoa Status { get; set; } = SituacaoPessoa.Visitante;
+    public Sexo Sexo { get; set; }
+    public SituacaoPessoa Status { get; set; }
 }
