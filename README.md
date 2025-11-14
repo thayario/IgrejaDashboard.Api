@@ -1,7 +1,7 @@
 # Igreja Dashboard – Backend
 
 ## **Descrição**
-API para gerenciar membros da igreja, incluindo **CRUD**, dashboard com totais e filtragem.  
+API para gerenciar membros da igreja, incluindo **CRUD**, dashboard com totais e pesquisa de membros.  
 Utiliza **Entity Framework Core** e **SQL Server**. Swagger habilitado para testes.
 
 ---
@@ -35,7 +35,7 @@ Esta seção explica como configurar o banco de dados, rodar as migrations e exe
 
 ### **1. Configuração do Banco de Dados**
 
-No arquivo `appsettings.json` ou `appsettings.Development.json`, configure a string de conexão:
+No arquivo `appsettings.json`, configure a string de conexão:
 
 {
   "ConnectionStrings": {
@@ -44,8 +44,6 @@ No arquivo `appsettings.json` ou `appsettings.Development.json`, configure a str
 }
 
 Substitua Server=localhost se usar outro servidor SQL.
-
-Certifique-se de que o banco exista ou crie via SQL Server Management Studio.
 
 
 ## Rodando via Visual Studio
@@ -63,6 +61,7 @@ Add-Migration Inicial
 
 Update-Database
 
+
 Clique em Play / Iniciar Depuração (F5).
 
 O Swagger estará disponível em:
@@ -75,8 +74,6 @@ HTTPS: https://localhost:7136/swagger
 ## Rodando via CMD / Terminal
 cd <caminho_para_o_projeto_IgrejaDashboardAPI>
 dotnet run
-
-O Swagger será aberto na porta configurada no launchSettings.json.
 
 
 ## Endpoints
