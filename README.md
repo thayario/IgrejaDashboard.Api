@@ -44,23 +44,32 @@ No arquivo `appsettings.json` ou `appsettings.Development.json`, configure a str
 }
 
 Substitua Server=localhost se usar outro servidor SQL.
+
 Certifique-se de que o banco exista ou crie via SQL Server Management Studio.
 
 
 ## Rodando via Visual Studio
 Abra a solução no Visual Studio.
+
 Defina o projeto IgrejaDashboardAPI como projeto de inicialização.
 
 Se necessário, execute o update do banco via Migrations:
+
 Menu: Ferramentas > Gerenciador de Pacotes NuGet > Console do Gerenciador de Pacotes
+
 Execute:
+
 Add-Migration Inicial
+
 Update-Database
 
 Clique em Play / Iniciar Depuração (F5).
 
 O Swagger estará disponível em:
-http://localhost:<porta>/swagger
+
+HTTP: http://localhost:5136/swagger
+
+HTTPS: https://localhost:7136/swagger
 
 
 ## Rodando via CMD / Terminal
@@ -68,3 +77,12 @@ cd <caminho_para_o_projeto_IgrejaDashboardAPI>
 dotnet run
 
 O Swagger será aberto na porta configurada no launchSettings.json.
+
+
+## Endpoints
+Método	Rota	Descrição
+GET	/api/pessoas - Lista membros (filtro opcional ?search=)
+GET	/api/pessoas/dashboard -	Totais de membros, masculinos e femininos
+POST	/api/pessoas -	Cria novo membro
+PUT	/api/pessoas/{id} -	Atualiza membro
+DELETE	/api/pessoas/{id} -	Remove membro
